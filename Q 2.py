@@ -33,19 +33,19 @@ class Graph:
         print("\nTarget not found")
         return
 
-
 dataGraph = {
-    '0': {'1', '4'},
-    '1': {'0', '2', '3', '4'},
-    '2': {'1', '3'},
-    '3': {'1', '2', '4'},
-    '4': {'0', '1', '3'}
+    'A': {'B', 'C', 'D'},
+    'B': {'E', 'F'},
+    'C': {'G'},
+    'D': {},
+    'E': {},
+    'F': {},
+    'G': {}
 }
 
 graph = Graph()
-
 for node, neighbours in dataGraph.items():
     for neighbour in neighbours:
         graph.add_edge(node, neighbour)
-        
-graph.breadth_first_search('0', '3')
+
+graph.breadth_first_search('A', 'G')
